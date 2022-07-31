@@ -1,11 +1,14 @@
-package br.com.alura.apilinguagens;
+package br.com.alura.apilinguagens.domain;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
+
 @Document(collection = "principaisLinguagens")
-public class Linguagem {
+public class Linguagem implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     @Id
     private String id;
     private String title;

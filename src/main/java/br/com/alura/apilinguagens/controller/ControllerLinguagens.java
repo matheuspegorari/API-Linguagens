@@ -1,4 +1,6 @@
-package br.com.alura.apilinguagens;
+package br.com.alura.apilinguagens.controller;
+import br.com.alura.apilinguagens.domain.Linguagem;
+import br.com.alura.apilinguagens.repositories.LinguagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,12 +11,11 @@ import java.util.List;
 public class ControllerLinguagens {
 
     @Autowired
-    private LinguagemRepository repositorio;
+    private LinguagemRepository linguagemRepository;
 
     @GetMapping("/linguagens")
     public List<Linguagem> linguagens(){
-        List<Linguagem> linguagens = repositorio.findAll();
-        return linguagens;
+        return linguagemRepository.findAll();
     }
 
 
